@@ -1,8 +1,6 @@
-# TrustSync Progress
-
-| Phase | Status | Date | Note |
+| phase | status | date | note |
 |---|---|---|---|
-| phase-0 | TODO | - | Setup and environment verification |
+| phase-0 | TODO | - | Project scaffold and gate framework |
 | phase-1 | TODO | - | Audio envelope and VAD |
 | phase-2 | TODO | - | Head pose and gaze |
 | phase-3 | TODO | - | Lip distance and FaceTracker |

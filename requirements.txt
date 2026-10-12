@@ -1,0 +1,14 @@
+mediapipe==0.10.14
+numpy==1.26.4
+scipy==1.11.4
+sounddevice==0.4.7
+soundfile==0.12.1
+PyYAML==6.0.1
+scikit-learn==1.4.2
+joblib==1.4.2
+pandas==2.2.2
+matplotlib==3.8.4
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+httpx==0.27.0
+pytest==8.2.2
