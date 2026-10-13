@@ -4,6 +4,7 @@ Usage: python tools/gates/run_gate.py N [--hardware]
 """
 import argparse
 import importlib.util
+import inspect
 import subprocess
 import sys
 from pathlib import Path
@@ -13,10 +14,12 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Run TrustSync phase gates.")
     parser.add_argument("N", type=int, help="Phase number to run gates up to")
     parser.add_argument("--hardware", action="store_true", help="Enable hardware checks")
+    parser.add_argument("--slow", action="store_true", help="Enable slow tests and checks")
     args = parser.parse_args()
 
     N: int = args.N
     hardware: bool = args.hardware
+    slow: bool = args.slow
 
     rows: list[tuple[str, str, str, str]] = []
 
@@ -32,7 +35,7 @@ def main() -> int:
         )
         if proc.returncode == 0:
             pytest_result = "PASS"
-            detail = proc.stdout.strip() or "pytest passed"
+            detail = proc.stdout.strip().splitlines()[-1] if proc.stdout.strip() else "pytest passed"
         elif proc.returncode == 5:
             if N == 0:
                 pytest_result = "PASS"
@@ -49,6 +52,48 @@ def main() -> int:
         detail = str(e)
 
     rows.append(("pytest", 'pytest -q -m "not hardware"', pytest_result, detail))
+
+    if slow:
+        slow_cmd = [
+            sys.executable,
+            "-m",
+            "pytest",
+            "-q",
+            "-m",
+            "not hardware",
+            "--runslow",
+            "tests/test_robustness.py",
+        ]
+        try:
+            sproc = subprocess.run(
+                slow_cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                check=False,
+            )
+            if sproc.returncode == 0:
+                s_result = "PASS"
+                s_detail = (
+                    sproc.stdout.strip().splitlines()[-1]
+                    if sproc.stdout.strip()
+                    else "pytest slow passed"
+                )
+            else:
+                s_result = "FAIL"
+                s_out = (sproc.stdout + "\n" + sproc.stderr).strip()
+                s_detail = s_out.splitlines()[-1] if s_out else f"exit code {sproc.returncode}"
+        except Exception as e:
+            s_result = "FAIL"
+            s_detail = str(e)
+        rows.append(
+            (
+                "pytest",
+                'pytest -q -m "not hardware" --runslow tests/test_robustness.py',
+                s_result,
+                s_detail,
+            )
+        )
 
     # (b) For K from 0 to N import tools/gates/gate_K.py
     gates_dir = Path(__file__).resolve().parent
@@ -69,7 +114,11 @@ def main() -> int:
             if not hasattr(mod, "run"):
                 rows.append((gate_name, f"gate_{K} run()", "FAIL", "run() function missing"))
                 continue
-            checks = mod.run(hardware=hardware)
+            sig = inspect.signature(mod.run)
+            kwargs: dict[str, bool] = {"hardware": hardware}
+            if "slow" in sig.parameters:
+                kwargs["slow"] = slow
+            checks = mod.run(**kwargs)
             for check, result, check_detail in checks:
                 rows.append((gate_name, check, result, check_detail))
         except Exception as e:

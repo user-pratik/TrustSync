@@ -15,4 +15,5 @@ pythonpath = ["src"]
 testpaths = ["tests"]
 markers = [
     "hardware: needs a camera or microphone",
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
 ]

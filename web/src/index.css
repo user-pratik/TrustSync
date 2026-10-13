@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 10 14 20;
+  --elev: 15 21 32;
+  --text: 230 237 243;
+  --muted: 139 152 169;
+  --accept: 45 212 191;
+  --reject: 248 113 113;
+  --listen: 251 191 36;
+  --info: 167 139 250;
+  --idle: 100 116 139;
+  --card: 255 255 255;
+  --border: 255 255 255;
+}
+
+html,
+body {
+  background-color: rgb(var(--bg));
+  color: rgb(var(--text));
+  font-family: 'Inter Variable', system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Custom thin scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Focus visible styling */
+:focus-visible {
+  outline: 2px solid rgb(var(--accept));
+  outline-offset: 2px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

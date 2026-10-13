@@ -1,0 +1,262 @@
+{
+  "generated_at": "2026-10-13T09:00:00Z",
+  "dataset": {
+    "n_clips": 64,
+    "per_scenario_counts": {
+      "live_single": 16,
+      "replay_spoof": 16,
+      "multi_one_speaks": 8,
+      "not_addressed": 16,
+      "occlusion_lowlight": 6,
+      "silence": 2
+    },
+    "subjects": ["sub_a", "sub_b", "sub_c"]
+  },
+  "config": {
+    "gate": {
+      "min_sync": 0.35,
+      "min_margin": 0.1,
+      "min_directed": 0.5,
+      "min_quality": 0.5
+    },
+    "min_lip_std": 0.004,
+    "addressee": {
+      "max_yaw_deg": 25,
+      "max_pitch_deg": 20
+    }
+  },
+  "current": {
+    "n_clips": 64,
+    "decision_accuracy": 0.9375,
+    "far_spoof": 0.0,
+    "far_all_reject": 0.025,
+    "frr": 0.0417,
+    "false_trigger_rate": 0.0,
+    "missed_utterance_rate": 0.0,
+    "liveness": { "precision": 1.0, "recall": 0.975, "f1": 0.987 },
+    "attribution_accuracy": 0.875,
+    "addressee_accuracy": 0.9375,
+    "reason_accuracy": 0.906,
+    "per_scenario": {
+      "live_single": { "n": 16, "accuracy": 0.9375, "accept_rate": 0.9375 },
+      "replay_spoof": { "n": 16, "accuracy": 1.0, "accept_rate": 0.0 },
+      "multi_one_speaks": { "n": 8, "accuracy": 0.875, "accept_rate": 0.875 },
+      "not_addressed": { "n": 16, "accuracy": 0.9375, "accept_rate": 0.0 },
+      "occlusion_lowlight": { "n": 6, "accuracy": 1.0, "accept_rate": 0.0 },
+      "silence": { "n": 2, "accuracy": 1.0, "accept_rate": 0.0 }
+    },
+    "confusion": {
+      "ACCEPT": { "ACCEPT": 23, "REJECT_NOT_ADDRESSED": 1 },
+      "REJECT_SPOOF": { "REJECT_SPOOF": 16 },
+      "REJECT_NOT_ADDRESSED": { "REJECT_NOT_ADDRESSED": 15, "ACCEPT": 1 },
+      "REJECT_ANY": { "REJECT_LOW_QUALITY": 6 },
+      "NONE": { "NONE": 2 }
+    }
+  },
+  "calibrated": {
+    "n_clips": 64,
+    "decision_accuracy": 0.9531,
+    "far_spoof": 0.0,
+    "far_all_reject": 0.0,
+    "frr": 0.0417,
+    "false_trigger_rate": 0.0,
+    "missed_utterance_rate": 0.0,
+    "liveness": { "precision": 1.0, "recall": 1.0, "f1": 1.0 },
+    "attribution_accuracy": 0.875,
+    "addressee_accuracy": 0.9375,
+    "reason_accuracy": 0.9375,
+    "per_scenario": {
+      "live_single": { "n": 16, "accuracy": 0.9531, "accept_rate": 0.9531 },
+      "replay_spoof": { "n": 16, "accuracy": 1.0, "accept_rate": 0.0 },
+      "multi_one_speaks": { "n": 8, "accuracy": 0.875, "accept_rate": 0.875 },
+      "not_addressed": { "n": 16, "accuracy": 0.9375, "accept_rate": 0.0 },
+      "occlusion_lowlight": { "n": 6, "accuracy": 1.0, "accept_rate": 0.0 },
+      "silence": { "n": 2, "accuracy": 1.0, "accept_rate": 0.0 }
+    },
+    "confusion": {
+      "ACCEPT": { "ACCEPT": 23, "REJECT_NOT_ADDRESSED": 1 },
+      "REJECT_SPOOF": { "REJECT_SPOOF": 16 },
+      "REJECT_NOT_ADDRESSED": { "REJECT_NOT_ADDRESSED": 16 },
+      "REJECT_ANY": { "REJECT_LOW_QUALITY": 6 },
+      "NONE": { "NONE": 2 }
+    }
+  },
+  "loso_rule": {
+    "folds": {
+      "sub_a": {
+        "n_clips": 22,
+        "decision_accuracy": 0.9545,
+        "far_spoof": 0.0,
+        "far_all_reject": 0.0,
+        "frr": 0.0,
+        "false_trigger_rate": 0.0,
+        "missed_utterance_rate": 0.0,
+        "liveness": { "precision": 1.0, "recall": 1.0, "f1": 1.0 },
+        "attribution_accuracy": 1.0,
+        "addressee_accuracy": 1.0,
+        "reason_accuracy": 0.95,
+        "per_scenario": {},
+        "confusion": {}
+      },
+      "sub_b": {
+        "n_clips": 21,
+        "decision_accuracy": 0.9524,
+        "far_spoof": 0.0,
+        "far_all_reject": 0.0,
+        "frr": 0.05,
+        "false_trigger_rate": 0.0,
+        "missed_utterance_rate": 0.0,
+        "liveness": { "precision": 1.0, "recall": 0.95, "f1": 0.974 },
+        "attribution_accuracy": 0.85,
+        "addressee_accuracy": 0.95,
+        "reason_accuracy": 0.90,
+        "per_scenario": {},
+        "confusion": {}
+      },
+      "sub_c": {
+        "n_clips": 21,
+        "decision_accuracy": 0.9524,
+        "far_spoof": 0.0,
+        "far_all_reject": 0.0,
+        "frr": 0.05,
+        "false_trigger_rate": 0.0,
+        "missed_utterance_rate": 0.0,
+        "liveness": { "precision": 1.0, "recall": 0.95, "f1": 0.974 },
+        "attribution_accuracy": 0.85,
+        "addressee_accuracy": 0.90,
+        "reason_accuracy": 0.90,
+        "per_scenario": {},
+        "confusion": {}
+      }
+    },
+    "pooled": {
+      "n_clips": 64,
+      "decision_accuracy": 0.9531,
+      "far_spoof": 0.0,
+      "far_all_reject": 0.0,
+      "frr": 0.0417,
+      "false_trigger_rate": 0.0,
+      "missed_utterance_rate": 0.0,
+      "liveness": { "precision": 1.0, "recall": 0.975, "f1": 0.987 },
+      "attribution_accuracy": 0.875,
+      "addressee_accuracy": 0.9375,
+      "reason_accuracy": 0.92,
+      "per_scenario": {
+        "live_single": { "n": 16, "accuracy": 0.9375, "accept_rate": 0.9375 },
+        "replay_spoof": { "n": 16, "accuracy": 1.0, "accept_rate": 0.0 },
+        "multi_one_speaks": { "n": 8, "accuracy": 0.875, "accept_rate": 0.875 },
+        "not_addressed": { "n": 16, "accuracy": 0.9375, "accept_rate": 0.0 },
+        "occlusion_lowlight": { "n": 6, "accuracy": 1.0, "accept_rate": 0.0 },
+        "silence": { "n": 2, "accuracy": 1.0, "accept_rate": 0.0 }
+      },
+      "confusion": {
+        "ACCEPT": { "ACCEPT": 23, "REJECT_NOT_ADDRESSED": 1 },
+        "REJECT_SPOOF": { "REJECT_SPOOF": 16 },
+        "REJECT_NOT_ADDRESSED": { "REJECT_NOT_ADDRESSED": 15, "ACCEPT": 1 },
+        "REJECT_ANY": { "REJECT_LOW_QUALITY": 6 },
+        "NONE": { "NONE": 2 }
+      }
+    }
+  },
+  "loso_learned": {
+    "folds": {
+      "sub_a": {
+        "n_clips": 22,
+        "decision_accuracy": 0.96,
+        "far_spoof": 0.0,
+        "far_all_reject": 0.0,
+        "frr": 0.0,
+        "false_trigger_rate": 0.0,
+        "missed_utterance_rate": 0.0,
+        "liveness": { "precision": 1.0, "recall": 1.0, "f1": 1.0 },
+        "attribution_accuracy": 1.0,
+        "addressee_accuracy": 1.0,
+        "reason_accuracy": 0.96,
+        "per_scenario": {},
+        "confusion": {}
+      },
+      "sub_b": {
+        "n_clips": 21,
+        "decision_accuracy": 0.96,
+        "far_spoof": 0.0,
+        "far_all_reject": 0.0,
+        "frr": 0.04,
+        "false_trigger_rate": 0.0,
+        "missed_utterance_rate": 0.0,
+        "liveness": { "precision": 1.0, "recall": 1.0, "f1": 1.0 },
+        "attribution_accuracy": 0.9,
+        "addressee_accuracy": 0.95,
+        "reason_accuracy": 0.94,
+        "per_scenario": {},
+        "confusion": {}
+      },
+      "sub_c": {
+        "n_clips": 21,
+        "decision_accuracy": 0.96,
+        "far_spoof": 0.0,
+        "far_all_reject": 0.0,
+        "frr": 0.04,
+        "false_trigger_rate": 0.0,
+        "missed_utterance_rate": 0.0,
+        "liveness": { "precision": 1.0, "recall": 1.0, "f1": 1.0 },
+        "attribution_accuracy": 0.9,
+        "addressee_accuracy": 0.95,
+        "reason_accuracy": 0.94,
+        "per_scenario": {},
+        "confusion": {}
+      }
+    },
+    "pooled": {
+      "n_clips": 64,
+      "decision_accuracy": 0.9688,
+      "far_spoof": 0.0,
+      "far_all_reject": 0.0,
+      "frr": 0.0417,
+      "false_trigger_rate": 0.0,
+      "missed_utterance_rate": 0.0,
+      "liveness": { "precision": 1.0, "recall": 1.0, "f1": 1.0 },
+      "attribution_accuracy": 0.9375,
+      "addressee_accuracy": 0.9531,
+      "reason_accuracy": 0.95,
+      "per_scenario": {
+        "live_single": { "n": 16, "accuracy": 0.9531, "accept_rate": 0.9531 },
+        "replay_spoof": { "n": 16, "accuracy": 1.0, "accept_rate": 0.0 },
+        "multi_one_speaks": { "n": 8, "accuracy": 0.9375, "accept_rate": 0.9375 },
+        "not_addressed": { "n": 16, "accuracy": 0.9688, "accept_rate": 0.0 },
+        "occlusion_lowlight": { "n": 6, "accuracy": 1.0, "accept_rate": 0.0 },
+        "silence": { "n": 2, "accuracy": 1.0, "accept_rate": 0.0 }
+      },
+      "confusion": {
+        "ACCEPT": { "ACCEPT": 23, "REJECT_NOT_ADDRESSED": 1 },
+        "REJECT_SPOOF": { "REJECT_SPOOF": 16 },
+        "REJECT_NOT_ADDRESSED": { "REJECT_NOT_ADDRESSED": 16 },
+        "REJECT_ANY": { "REJECT_LOW_QUALITY": 6 },
+        "NONE": { "NONE": 2 }
+      }
+    }
+  },
+  "learned_kind": "logreg",
+  "ablation": [
+    { "name": "B0", "accuracy": 0.375, "far_all_reject": 1.0, "frr": 0.0, "liveness_f1": 0.545 },
+    { "name": "A1", "accuracy": 0.750, "far_all_reject": 0.28, "frr": 0.04, "liveness_f1": 0.88 },
+    { "name": "A2", "accuracy": 0.843, "far_all_reject": 0.18, "frr": 0.04, "liveness_f1": 0.92 },
+    { "name": "A3", "accuracy": 0.922, "far_all_reject": 0.04, "frr": 0.04, "liveness_f1": 0.96 },
+    { "name": "A4", "accuracy": 0.953, "far_all_reject": 0.00, "frr": 0.04, "liveness_f1": 0.98 },
+    { "name": "A5", "accuracy": 0.969, "far_all_reject": 0.00, "frr": 0.04, "liveness_f1": 1.00 }
+  ],
+  "av_lag": {
+    "median": 0.015,
+    "p10": -0.02,
+    "p90": 0.04,
+    "n": 60,
+    "saturated_fraction": 0.02
+  },
+  "fps": {
+    "mean": 24.2,
+    "p5": 19.8,
+    "source": "photo",
+    "machine": "x86_64"
+  },
+  "figures": [],
+  "notes": ["Sample data for the mock UI"]
+}

@@ -1,0 +1,718 @@
+{
+  "generated_at": "2026-10-13T10:59:09.672658+00:00",
+  "dataset": {
+    "n_clips": 13,
+    "per_scenario_counts": {
+      "live_single": 3,
+      "replay_spoof": 3,
+      "not_addressed": 3,
+      "multi_one_speaks": 3,
+      "silence": 1
+    },
+    "subjects": [
+      "sub_a",
+      "sub_b",
+      "sub_c"
+    ]
+  },
+  "config": {
+    "gate": {
+      "mode": "rule",
+      "min_sync": 0.3,
+      "min_margin": 0.1,
+      "min_directed": 0.6,
+      "min_quality": 0.5,
+      "model_path": "models/gate.joblib"
+    },
+    "min_lip_std": 0.004,
+    "addressee": {
+      "max_yaw_deg": 25.0,
+      "max_pitch_deg": 20.0,
+      "yaw_offset_deg": 0.0,
+      "pitch_offset_deg": 0.0,
+      "gaze_weight": 0.3,
+      "gaze_max_off": 0.6,
+      "use_gaze": true
+    }
+  },
+  "current": {
+    "n_clips": 13,
+    "decision_accuracy": 1.0,
+    "far_spoof": 0.0,
+    "far_all_reject": 0.0,
+    "frr": 0.0,
+    "false_trigger_rate": 0.0,
+    "missed_utterance_rate": 0.0,
+    "liveness": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "attribution_accuracy": 1.0,
+    "addressee_accuracy": 1.0,
+    "reason_accuracy": 1.0,
+    "per_scenario": {
+      "live_single": {
+        "n": 3,
+        "accuracy": 1.0,
+        "accept_rate": 1.0
+      },
+      "multi_one_speaks": {
+        "n": 3,
+        "accuracy": 1.0,
+        "accept_rate": 1.0
+      },
+      "not_addressed": {
+        "n": 3,
+        "accuracy": 1.0,
+        "accept_rate": 0.0
+      },
+      "replay_spoof": {
+        "n": 3,
+        "accuracy": 1.0,
+        "accept_rate": 0.0
+      },
+      "silence": {
+        "n": 1,
+        "accuracy": 1.0,
+        "accept_rate": 0.0
+      }
+    },
+    "confusion": {
+      "ACCEPT": {
+        "ACCEPT": 6
+      },
+      "REJECT_SPOOF": {
+        "REJECT_SPOOF": 3
+      },
+      "REJECT_NOT_ADDRESSED": {
+        "REJECT_NOT_ADDRESSED": 3
+      },
+      "NONE": {
+        "NONE": 1
+      }
+    }
+  },
+  "calibrated": {
+    "n_clips": 13,
+    "decision_accuracy": 1.0,
+    "far_spoof": 0.0,
+    "far_all_reject": 0.0,
+    "frr": 0.0,
+    "false_trigger_rate": 0.0,
+    "missed_utterance_rate": 0.0,
+    "liveness": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "attribution_accuracy": 1.0,
+    "addressee_accuracy": 1.0,
+    "reason_accuracy": 1.0,
+    "per_scenario": {
+      "live_single": {
+        "n": 3,
+        "accuracy": 1.0,
+        "accept_rate": 1.0
+      },
+      "multi_one_speaks": {
+        "n": 3,
+        "accuracy": 1.0,
+        "accept_rate": 1.0
+      },
+      "not_addressed": {
+        "n": 3,
+        "accuracy": 1.0,
+        "accept_rate": 0.0
+      },
+      "replay_spoof": {
+        "n": 3,
+        "accuracy": 1.0,
+        "accept_rate": 0.0
+      },
+      "silence": {
+        "n": 1,
+        "accuracy": 1.0,
+        "accept_rate": 0.0
+      }
+    },
+    "confusion": {
+      "ACCEPT": {
+        "ACCEPT": 6
+      },
+      "REJECT_SPOOF": {
+        "REJECT_SPOOF": 3
+      },
+      "REJECT_NOT_ADDRESSED": {
+        "REJECT_NOT_ADDRESSED": 3
+      },
+      "NONE": {
+        "NONE": 1
+      }
+    },
+    "thresholds": {
+      "min_sync": 0.3,
+      "min_margin": 0.1,
+      "min_directed": 0.6,
+      "min_lip_std": 0.004
+    }
+  },
+  "loso_rule": {
+    "folds": {
+      "sub_a": {
+        "n_clips": 5,
+        "decision_accuracy": 1.0,
+        "far_spoof": 0.0,
+        "far_all_reject": 0.0,
+        "frr": 0.0,
+        "false_trigger_rate": 0.0,
+        "missed_utterance_rate": 0.0,
+        "liveness": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "attribution_accuracy": 1.0,
+        "addressee_accuracy": 1.0,
+        "reason_accuracy": 1.0,
+        "per_scenario": {
+          "live_single": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 1.0
+          },
+          "multi_one_speaks": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 1.0
+          },
+          "not_addressed": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 0.0
+          },
+          "replay_spoof": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 0.0
+          },
+          "silence": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 0.0
+          }
+        },
+        "confusion": {
+          "ACCEPT": {
+            "ACCEPT": 2
+          },
+          "REJECT_SPOOF": {
+            "REJECT_SPOOF": 1
+          },
+          "REJECT_NOT_ADDRESSED": {
+            "REJECT_NOT_ADDRESSED": 1
+          },
+          "NONE": {
+            "NONE": 1
+          }
+        }
+      },
+      "sub_b": {
+        "n_clips": 4,
+        "decision_accuracy": 1.0,
+        "far_spoof": 0.0,
+        "far_all_reject": 0.0,
+        "frr": 0.0,
+        "false_trigger_rate": 0.0,
+        "missed_utterance_rate": 0.0,
+        "liveness": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "attribution_accuracy": 1.0,
+        "addressee_accuracy": 1.0,
+        "reason_accuracy": 1.0,
+        "per_scenario": {
+          "live_single": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 1.0
+          },
+          "multi_one_speaks": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 1.0
+          },
+          "not_addressed": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 0.0
+          },
+          "replay_spoof": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 0.0
+          }
+        },
+        "confusion": {
+          "ACCEPT": {
+            "ACCEPT": 2
+          },
+          "REJECT_SPOOF": {
+            "REJECT_SPOOF": 1
+          },
+          "REJECT_NOT_ADDRESSED": {
+            "REJECT_NOT_ADDRESSED": 1
+          }
+        }
+      },
+      "sub_c": {
+        "n_clips": 4,
+        "decision_accuracy": 1.0,
+        "far_spoof": 0.0,
+        "far_all_reject": 0.0,
+        "frr": 0.0,
+        "false_trigger_rate": 0.0,
+        "missed_utterance_rate": 0.0,
+        "liveness": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "attribution_accuracy": 1.0,
+        "addressee_accuracy": 1.0,
+        "reason_accuracy": 1.0,
+        "per_scenario": {
+          "live_single": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 1.0
+          },
+          "multi_one_speaks": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 1.0
+          },
+          "not_addressed": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 0.0
+          },
+          "replay_spoof": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 0.0
+          }
+        },
+        "confusion": {
+          "ACCEPT": {
+            "ACCEPT": 2
+          },
+          "REJECT_SPOOF": {
+            "REJECT_SPOOF": 1
+          },
+          "REJECT_NOT_ADDRESSED": {
+            "REJECT_NOT_ADDRESSED": 1
+          }
+        }
+      }
+    },
+    "pooled": {
+      "n_clips": 13,
+      "decision_accuracy": 1.0,
+      "far_spoof": 0.0,
+      "far_all_reject": 0.0,
+      "frr": 0.0,
+      "false_trigger_rate": 0.0,
+      "missed_utterance_rate": 0.0,
+      "liveness": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "attribution_accuracy": 1.0,
+      "addressee_accuracy": 1.0,
+      "reason_accuracy": 1.0,
+      "per_scenario": {
+        "live_single": {
+          "n": 3,
+          "accuracy": 1.0,
+          "accept_rate": 1.0
+        },
+        "multi_one_speaks": {
+          "n": 3,
+          "accuracy": 1.0,
+          "accept_rate": 1.0
+        },
+        "not_addressed": {
+          "n": 3,
+          "accuracy": 1.0,
+          "accept_rate": 0.0
+        },
+        "replay_spoof": {
+          "n": 3,
+          "accuracy": 1.0,
+          "accept_rate": 0.0
+        },
+        "silence": {
+          "n": 1,
+          "accuracy": 1.0,
+          "accept_rate": 0.0
+        }
+      },
+      "confusion": {
+        "ACCEPT": {
+          "ACCEPT": 6
+        },
+        "REJECT_SPOOF": {
+          "REJECT_SPOOF": 3
+        },
+        "REJECT_NOT_ADDRESSED": {
+          "REJECT_NOT_ADDRESSED": 3
+        },
+        "NONE": {
+          "NONE": 1
+        }
+      }
+    }
+  },
+  "loso_learned": {
+    "folds": {
+      "sub_a": {
+        "n_clips": 5,
+        "decision_accuracy": 1.0,
+        "far_spoof": 0.0,
+        "far_all_reject": 0.0,
+        "frr": 0.0,
+        "false_trigger_rate": 0.0,
+        "missed_utterance_rate": 0.0,
+        "liveness": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "attribution_accuracy": 1.0,
+        "addressee_accuracy": 1.0,
+        "reason_accuracy": 1.0,
+        "per_scenario": {
+          "live_single": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 1.0
+          },
+          "multi_one_speaks": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 1.0
+          },
+          "not_addressed": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 0.0
+          },
+          "replay_spoof": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 0.0
+          },
+          "silence": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 0.0
+          }
+        },
+        "confusion": {
+          "ACCEPT": {
+            "ACCEPT": 2
+          },
+          "REJECT_SPOOF": {
+            "REJECT_SPOOF": 1
+          },
+          "REJECT_NOT_ADDRESSED": {
+            "REJECT_NOT_ADDRESSED": 1
+          },
+          "NONE": {
+            "NONE": 1
+          }
+        }
+      },
+      "sub_b": {
+        "n_clips": 4,
+        "decision_accuracy": 1.0,
+        "far_spoof": 0.0,
+        "far_all_reject": 0.0,
+        "frr": 0.0,
+        "false_trigger_rate": 0.0,
+        "missed_utterance_rate": 0.0,
+        "liveness": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "attribution_accuracy": 1.0,
+        "addressee_accuracy": 1.0,
+        "reason_accuracy": 1.0,
+        "per_scenario": {
+          "live_single": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 1.0
+          },
+          "multi_one_speaks": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 1.0
+          },
+          "not_addressed": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 0.0
+          },
+          "replay_spoof": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 0.0
+          }
+        },
+        "confusion": {
+          "ACCEPT": {
+            "ACCEPT": 2
+          },
+          "REJECT_SPOOF": {
+            "REJECT_SPOOF": 1
+          },
+          "REJECT_NOT_ADDRESSED": {
+            "REJECT_NOT_ADDRESSED": 1
+          }
+        }
+      },
+      "sub_c": {
+        "n_clips": 4,
+        "decision_accuracy": 1.0,
+        "far_spoof": 0.0,
+        "far_all_reject": 0.0,
+        "frr": 0.0,
+        "false_trigger_rate": 0.0,
+        "missed_utterance_rate": 0.0,
+        "liveness": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "attribution_accuracy": 1.0,
+        "addressee_accuracy": 1.0,
+        "reason_accuracy": 1.0,
+        "per_scenario": {
+          "live_single": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 1.0
+          },
+          "multi_one_speaks": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 1.0
+          },
+          "not_addressed": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 0.0
+          },
+          "replay_spoof": {
+            "n": 1,
+            "accuracy": 1.0,
+            "accept_rate": 0.0
+          }
+        },
+        "confusion": {
+          "ACCEPT": {
+            "ACCEPT": 2
+          },
+          "REJECT_SPOOF": {
+            "REJECT_SPOOF": 1
+          },
+          "REJECT_NOT_ADDRESSED": {
+            "REJECT_NOT_ADDRESSED": 1
+          }
+        }
+      }
+    },
+    "pooled": {
+      "n_clips": 13,
+      "decision_accuracy": 1.0,
+      "far_spoof": 0.0,
+      "far_all_reject": 0.0,
+      "frr": 0.0,
+      "false_trigger_rate": 0.0,
+      "missed_utterance_rate": 0.0,
+      "liveness": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "attribution_accuracy": 1.0,
+      "addressee_accuracy": 1.0,
+      "reason_accuracy": 1.0,
+      "per_scenario": {
+        "live_single": {
+          "n": 3,
+          "accuracy": 1.0,
+          "accept_rate": 1.0
+        },
+        "multi_one_speaks": {
+          "n": 3,
+          "accuracy": 1.0,
+          "accept_rate": 1.0
+        },
+        "not_addressed": {
+          "n": 3,
+          "accuracy": 1.0,
+          "accept_rate": 0.0
+        },
+        "replay_spoof": {
+          "n": 3,
+          "accuracy": 1.0,
+          "accept_rate": 0.0
+        },
+        "silence": {
+          "n": 1,
+          "accuracy": 1.0,
+          "accept_rate": 0.0
+        }
+      },
+      "confusion": {
+        "ACCEPT": {
+          "ACCEPT": 6
+        },
+        "REJECT_SPOOF": {
+          "REJECT_SPOOF": 3
+        },
+        "REJECT_NOT_ADDRESSED": {
+          "REJECT_NOT_ADDRESSED": 3
+        },
+        "NONE": {
+          "NONE": 1
+        }
+      }
+    }
+  },
+  "learned_kind": "logreg",
+  "ablation": [
+    {
+      "name": "B0",
+      "accuracy": 0.5384615384615384,
+      "far_all_reject": 1.0,
+      "frr": 0.0,
+      "liveness_f1": 1.0
+    },
+    {
+      "name": "A1",
+      "accuracy": 0.7692307692307693,
+      "far_all_reject": 0.5,
+      "frr": 0.0,
+      "liveness_f1": 1.0
+    },
+    {
+      "name": "A2",
+      "accuracy": 0.7692307692307693,
+      "far_all_reject": 0.5,
+      "frr": 0.0,
+      "liveness_f1": 1.0
+    },
+    {
+      "name": "A3",
+      "accuracy": 1.0,
+      "far_all_reject": 0.0,
+      "frr": 0.0,
+      "liveness_f1": 1.0
+    },
+    {
+      "name": "A4",
+      "accuracy": 1.0,
+      "far_all_reject": 0.0,
+      "frr": 0.0,
+      "liveness_f1": 1.0
+    },
+    {
+      "name": "A5",
+      "accuracy": 1.0,
+      "far_all_reject": 0.0,
+      "frr": 0.0,
+      "liveness_f1": 1.0
+    }
+  ],
+  "av_lag": {
+    "median": 0.0,
+    "p10": 0.0,
+    "p90": 0.0,
+    "n": 12,
+    "saturated_fraction": 0.0
+  },
+  "fps": {
+    "mean": 31.23,
+    "p5": 26.45,
+    "source": "photo",
+    "machine": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel"
+  },
+  "figures": [
+    {
+      "name": "roc_sync",
+      "path": "reports\\figures\\roc_sync.png",
+      "caption": "ROC curve for lip-audio synchrony."
+    },
+    {
+      "name": "roc_directed",
+      "path": "reports\\figures\\roc_directed.png",
+      "caption": "ROC curve for addressee classification."
+    },
+    {
+      "name": "sync_by_scenario",
+      "path": "reports\\figures\\sync_by_scenario.png",
+      "caption": "Sync score distribution across scenarios."
+    },
+    {
+      "name": "confusion",
+      "path": "reports\\figures\\confusion.png",
+      "caption": "Decision confusion matrix."
+    },
+    {
+      "name": "ablation",
+      "path": "reports\\figures\\ablation.png",
+      "caption": "Ablation study of decision gate variants."
+    },
+    {
+      "name": "lag_hist",
+      "path": "reports\\figures\\lag_hist.png",
+      "caption": "Observed audio-visual latency histogram."
+    },
+    {
+      "name": "timeline_live_single",
+      "path": "reports\\figures\\timeline_live_single.png",
+      "caption": "Per-frame temporal signal timeline for live_single."
+    },
+    {
+      "name": "timeline_replay_spoof",
+      "path": "reports\\figures\\timeline_replay_spoof.png",
+      "caption": "Per-frame temporal signal timeline for replay_spoof."
+    },
+    {
+      "name": "timeline_not_addressed",
+      "path": "reports\\figures\\timeline_not_addressed.png",
+      "caption": "Per-frame temporal signal timeline for not_addressed."
+    },
+    {
+      "name": "timeline_multi_one_speaks",
+      "path": "reports\\figures\\timeline_multi_one_speaks.png",
+      "caption": "Per-frame temporal signal timeline for multi_one_speaks."
+    },
+    {
+      "name": "timeline_silence",
+      "path": "reports\\figures\\timeline_silence.png",
+      "caption": "Per-frame temporal signal timeline for silence."
+    }
+  ],
+  "notes": [
+    "Phase 8 evaluation run"
+  ]
+}

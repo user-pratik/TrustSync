@@ -1,0 +1,7 @@
+Category,Count
+Total Clips,13
+Scenario: live_single,3
+Scenario: multi_one_speaks,3
+Scenario: not_addressed,3
+Scenario: replay_spoof,3
+Scenario: silence,1

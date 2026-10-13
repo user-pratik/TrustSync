@@ -1,0 +1,58 @@
+{
+  "machine": {
+    "platform": "Windows-10-10.0.26220-SP0",
+    "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "python": "3.11.9",
+    "cpu_count": 16,
+    "opencv": "4.11.0",
+    "mediapipe": "0.10.14"
+  },
+  "source": "photo",
+  "n_frames": 150,
+  "stages": {
+    "face_tracker.process": {
+      "mean_ms": 30.4444,
+      "p50_ms": 30.5869,
+      "p95_ms": 38.4721,
+      "p99_ms": 40.9117
+    },
+    "pose+gaze+directed": {
+      "mean_ms": 1.6181,
+      "p50_ms": 1.667,
+      "p95_ms": 2.0291,
+      "p99_ms": 2.2881
+    },
+    "running sync": {
+      "mean_ms": 0.4782,
+      "p50_ms": 0.4851,
+      "p95_ms": 0.6458,
+      "p99_ms": 0.6906
+    },
+    "full pipeline.process": {
+      "mean_ms": 32.0235,
+      "p50_ms": 33.2541,
+      "p95_ms": 37.8072,
+      "p99_ms": 41.3451
+    },
+    "JPEG encode": {
+      "mean_ms": 3.2191,
+      "p50_ms": 3.5133,
+      "p95_ms": 3.9837,
+      "p99_ms": 4.1419
+    },
+    "draw_hud": {
+      "mean_ms": 4.0307,
+      "p50_ms": 4.2931,
+      "p95_ms": 6.1526,
+      "p99_ms": 6.6659
+    }
+  },
+  "fps": {
+    "mean": 31.23,
+    "p5": 26.45
+  },
+  "decision_latency_s": {
+    "mean": 0.4333,
+    "max": 0.4333
+  }
+}
